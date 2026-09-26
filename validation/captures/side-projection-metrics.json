@@ -1,0 +1,703 @@
+{
+  "reference": "SwiftUI Glass built with Xcode beta",
+  "godot": "4.7.1 stable, exact canonical side-projection shader",
+  "capture_size_pixels": [
+    2400,
+    1600
+  ],
+  "acceptance": {
+    "material_glass_similarity_percent_min": 95.0,
+    "identity_glass_similarity_percent_min": 98.5,
+    "whole_window_similarity_percent_min": 99.4
+  },
+  "matrix": {
+    "harbour": {
+      "regular": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 1.2868,
+          "rms_0_255": 6.4006,
+          "similarity_percent": 99.4954
+        },
+        "glass_crop": {
+          "mae_0_255": 12.9286,
+          "rms_0_255": 19.4221,
+          "similarity_percent": 94.93
+        },
+        "control_bounds": {
+          "mae_0_255": 20.3738,
+          "rms_0_255": 25.2471,
+          "similarity_percent": 92.0103
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "clear": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 1.2218,
+          "rms_0_255": 7.6934,
+          "similarity_percent": 99.5209
+        },
+        "glass_crop": {
+          "mae_0_255": 12.1668,
+          "rms_0_255": 24.3012,
+          "similarity_percent": 95.2287
+        },
+        "control_bounds": {
+          "mae_0_255": 18.7772,
+          "rms_0_255": 31.8966,
+          "similarity_percent": 92.6364
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "regular-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.8763,
+          "rms_0_255": 7.0245,
+          "similarity_percent": 99.6564
+        },
+        "glass_crop": {
+          "mae_0_255": 8.1219,
+          "rms_0_255": 21.8012,
+          "similarity_percent": 96.8149
+        },
+        "control_bounds": {
+          "mae_0_255": 11.1808,
+          "rms_0_255": 27.3961,
+          "similarity_percent": 95.6154
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "clear-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.9062,
+          "rms_0_255": 7.3439,
+          "similarity_percent": 99.6446
+        },
+        "glass_crop": {
+          "mae_0_255": 8.472,
+          "rms_0_255": 23.0003,
+          "similarity_percent": 96.6776
+        },
+        "control_bounds": {
+          "mae_0_255": 11.6473,
+          "rms_0_255": 29.0046,
+          "similarity_percent": 95.4324
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "identity": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.3665,
+          "rms_0_255": 5.2508,
+          "similarity_percent": 99.8563
+        },
+        "glass_crop": {
+          "mae_0_255": 2.1539,
+          "rms_0_255": 14.8455,
+          "similarity_percent": 99.1553
+        },
+        "control_bounds": {
+          "mae_0_255": 3.828,
+          "rms_0_255": 20.0639,
+          "similarity_percent": 98.4988
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      }
+    },
+    "city-night": {
+      "regular": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 1.4832,
+          "rms_0_255": 7.3169,
+          "similarity_percent": 99.4184
+        },
+        "glass_crop": {
+          "mae_0_255": 15.8069,
+          "rms_0_255": 23.7604,
+          "similarity_percent": 93.8012
+        },
+        "control_bounds": {
+          "mae_0_255": 28.0471,
+          "rms_0_255": 32.0695,
+          "similarity_percent": 89.0011
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "clear": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.9795,
+          "rms_0_255": 7.2768,
+          "similarity_percent": 99.6159
+        },
+        "glass_crop": {
+          "mae_0_255": 9.9103,
+          "rms_0_255": 23.616,
+          "similarity_percent": 96.1136
+        },
+        "control_bounds": {
+          "mae_0_255": 17.2585,
+          "rms_0_255": 31.8694,
+          "similarity_percent": 93.232
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "regular-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.7518,
+          "rms_0_255": 6.8503,
+          "similarity_percent": 99.7052
+        },
+        "glass_crop": {
+          "mae_0_255": 7.2437,
+          "rms_0_255": 22.072,
+          "similarity_percent": 97.1593
+        },
+        "control_bounds": {
+          "mae_0_255": 12.0554,
+          "rms_0_255": 28.8149,
+          "similarity_percent": 95.2724
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "clear-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.6264,
+          "rms_0_255": 6.9138,
+          "similarity_percent": 99.7544
+        },
+        "glass_crop": {
+          "mae_0_255": 5.7759,
+          "rms_0_255": 22.3024,
+          "similarity_percent": 97.735
+        },
+        "control_bounds": {
+          "mae_0_255": 9.3594,
+          "rms_0_255": 29.1203,
+          "similarity_percent": 96.3296
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "identity": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.3913,
+          "rms_0_255": 6.4663,
+          "similarity_percent": 99.8466
+        },
+        "glass_crop": {
+          "mae_0_255": 3.0235,
+          "rms_0_255": 20.6711,
+          "similarity_percent": 98.8143
+        },
+        "control_bounds": {
+          "mae_0_255": 5.4769,
+          "rms_0_255": 27.9403,
+          "similarity_percent": 97.8522
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      }
+    },
+    "prism": {
+      "regular": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 1.4209,
+          "rms_0_255": 6.7126,
+          "similarity_percent": 99.4428
+        },
+        "glass_crop": {
+          "mae_0_255": 13.2445,
+          "rms_0_255": 21.2019,
+          "similarity_percent": 94.8061
+        },
+        "control_bounds": {
+          "mae_0_255": 21.5687,
+          "rms_0_255": 28.0231,
+          "similarity_percent": 91.5417
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "clear": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 1.3053,
+          "rms_0_255": 7.2735,
+          "similarity_percent": 99.4881
+        },
+        "glass_crop": {
+          "mae_0_255": 11.8916,
+          "rms_0_255": 23.2671,
+          "similarity_percent": 95.3366
+        },
+        "control_bounds": {
+          "mae_0_255": 18.941,
+          "rms_0_255": 30.7497,
+          "similarity_percent": 92.5722
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "regular-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.9977,
+          "rms_0_255": 7.0177,
+          "similarity_percent": 99.6087
+        },
+        "glass_crop": {
+          "mae_0_255": 8.2901,
+          "rms_0_255": 22.3283,
+          "similarity_percent": 96.749
+        },
+        "control_bounds": {
+          "mae_0_255": 12.1567,
+          "rms_0_255": 28.6847,
+          "similarity_percent": 95.2327
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "clear-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.9674,
+          "rms_0_255": 7.1396,
+          "similarity_percent": 99.6206
+        },
+        "glass_crop": {
+          "mae_0_255": 7.9346,
+          "rms_0_255": 22.7765,
+          "similarity_percent": 96.8884
+        },
+        "control_bounds": {
+          "mae_0_255": 11.3634,
+          "rms_0_255": 29.1847,
+          "similarity_percent": 95.5438
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "identity": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.5154,
+          "rms_0_255": 5.7434,
+          "similarity_percent": 99.7979
+        },
+        "glass_crop": {
+          "mae_0_255": 2.6431,
+          "rms_0_255": 17.5552,
+          "similarity_percent": 98.9635
+        },
+        "control_bounds": {
+          "mae_0_255": 4.6522,
+          "rms_0_255": 23.7249,
+          "similarity_percent": 98.1756
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      }
+    },
+    "facade": {
+      "regular": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.817,
+          "rms_0_255": 4.8679,
+          "similarity_percent": 99.6796
+        },
+        "glass_crop": {
+          "mae_0_255": 8.9825,
+          "rms_0_255": 14.2965,
+          "similarity_percent": 96.4775
+        },
+        "control_bounds": {
+          "mae_0_255": 13.8938,
+          "rms_0_255": 18.5594,
+          "similarity_percent": 94.5514
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "clear": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 1.0174,
+          "rms_0_255": 7.1295,
+          "similarity_percent": 99.601
+        },
+        "glass_crop": {
+          "mae_0_255": 11.329,
+          "rms_0_255": 22.8483,
+          "similarity_percent": 95.5572
+        },
+        "control_bounds": {
+          "mae_0_255": 18.0414,
+          "rms_0_255": 30.3285,
+          "similarity_percent": 92.9249
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "regular-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.6235,
+          "rms_0_255": 6.589,
+          "similarity_percent": 99.7555
+        },
+        "glass_crop": {
+          "mae_0_255": 6.7176,
+          "rms_0_255": 20.8623,
+          "similarity_percent": 97.3657
+        },
+        "control_bounds": {
+          "mae_0_255": 9.3065,
+          "rms_0_255": 26.4123,
+          "similarity_percent": 96.3504
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "clear-tinted": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.8251,
+          "rms_0_255": 7.0587,
+          "similarity_percent": 99.6764
+        },
+        "glass_crop": {
+          "mae_0_255": 9.0775,
+          "rms_0_255": 22.5897,
+          "similarity_percent": 96.4402
+        },
+        "control_bounds": {
+          "mae_0_255": 13.5178,
+          "rms_0_255": 28.8508,
+          "similarity_percent": 94.6989
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      },
+      "identity": {
+        "capture_size": [
+          2400,
+          1600
+        ],
+        "comparison_color_space": "sRGB",
+        "whole_window": {
+          "mae_0_255": 0.1548,
+          "rms_0_255": 3.9714,
+          "similarity_percent": 99.9393
+        },
+        "glass_crop": {
+          "mae_0_255": 1.2305,
+          "rms_0_255": 10.5645,
+          "similarity_percent": 99.5175
+        },
+        "control_bounds": {
+          "mae_0_255": 2.2442,
+          "rms_0_255": 14.28,
+          "similarity_percent": 99.1199
+        },
+        "glass_crop_pixels": [
+          700,
+          1132,
+          1700,
+          1460
+        ],
+        "control_bounds_pixels": [
+          760,
+          1204,
+          1640,
+          1408
+        ]
+      }
+    }
+  }
+}

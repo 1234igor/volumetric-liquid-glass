@@ -1,0 +1,24 @@
+; Engine configuration file.
+; Volumetric Liquid Glass for Godot 4.7.
+
+config_version=5
+
+[application]
+
+config/name="Volumetric Liquid Glass for Godot"
+config/description="Reusable ray-marched glass volumes and a spatial application example."
+run/main_scene="res://examples/spatial_gallery/main.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[display]
+
+window/size/viewport_width=1200
+window/size/viewport_height=800
+window/size/resizable=false
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+environment/defaults/default_clear_color=Color(0.043, 0.259, 0.396, 1)
