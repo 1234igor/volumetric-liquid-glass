@@ -47,8 +47,8 @@ Panel with the Side camera uses a flat glass panel. Set `side_glass_rect` to pla
 
 ## Validation
 
-The volume shapes have no native Apple equivalent. Their checks cover visible output, distinct views, and Identity. The flat panel has a SwiftUI comparison, but its Regular material still fails the stored macOS 27 checks. It is an approximation.
+The volume checks cover visible output, distinct views, and Identity. The flat panel’s Regular material still fails the stored reference checks. It remains an approximation.
 
 [Validation and image generation](validation/README.md) contains the commands and results. A high average pixel-error score alone does not establish visual fidelity.
 
-[MIT license](LICENSE). See [third-party notices](THIRD-PARTY.md) for the photographs. This project is independent of Apple.
+[MIT license](LICENSE). See [third-party notices](THIRD-PARTY.md) for the photographs.
