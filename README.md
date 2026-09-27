@@ -6,7 +6,7 @@ Four glass shapes for Godot: a panel, an orb, a torus, and a cluster. Each bends
 
 [Image credits and licenses](IMAGE-LICENSES.md): Bernard Spragg (CC0) and project-generated backgrounds (MIT).
 
-These are captures from the Godot renderer. See [all materials](validation/captures/volume-material-matrix.png) and [camera views](validation/captures/view-projections.png).
+More screenshots: [all materials](validation/captures/volume-material-matrix.png) · [camera angles](validation/captures/view-projections.png).
 
 ## Run
 
@@ -45,10 +45,8 @@ Identity turns off the glass, capture, animation, and input. Labels remain visib
 
 Panel with the Side camera uses a flat glass panel. Set `side_glass_rect` to place it, and add labels to `get_side_content_layer()`. Other views use the volume shader, which traces light through the object's front and back surfaces.
 
-## Validation
+## Development
 
-The volume checks cover visible output, distinct views, and Identity. The flat panel’s Regular material still fails the stored reference checks. It remains an approximation.
-
-[Validation and image generation](validation/README.md) contains the commands and results. A high average pixel-error score alone does not establish visual fidelity.
+[Rendering checks and screenshot scripts](validation/README.md).
 
 [MIT license](LICENSE). See [third-party notices](THIRD-PARTY.md) for the photographs.
