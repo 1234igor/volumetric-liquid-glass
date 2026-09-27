@@ -1,102 +1,51 @@
 # Validation
 
-This directory keeps the pixel-matching work separate from normal addon use. It
-holds a small SwiftUI application that calls Apple's public `.glassEffect`, the
-canonical Godot side scene, the capture tooling, and the checked-in evidence.
+The volume shapes and the flat panel have separate checks. Only the flat panel has a native SwiftUI reference.
 
-Two different things are gated here, because only one of them has something to
-be compared against.
+## Volume shapes
 
-## 1. The flat projection, against SwiftUI
+The matrix covers four objects and five materials. Active materials must change at least 5% of the frame's pixels. Identity may change at most 1%; the stored run changes none. A separate check confirms that the four camera presets produce different images.
 
-Panel + Side is the projection with a native counterpart, so it is measured the
-same way as the flat addon: five materials × four backgrounds = 20 pairs at
-2400 × 1600, compared in sRGB over the whole window, the glass crop and the
-control bounds. Measured on macOS 27 with Godot 4.7.1:
+See [materials](captures/volume-material-matrix.png), [views](captures/view-projections.png), and [metrics](captures/volume-metrics.json). These checks detect missing output; they do not measure resemblance to Apple glass.
 
-| Metric | Range |
-|--------|-------|
-| Glass crop — Regular, Clear, both tinted | 93.80 – 97.73 % |
-| Glass crop — Identity | 98.81 – 99.52 % |
-| Whole window | 99.42 – 99.94 % |
+## Flat panel
 
-Evidence: [`captures/side-projection-matrix.png`](captures/side-projection-matrix.png),
-`captures/side-projection-metrics.json`.
+Panel with the Side camera is compared with SwiftUI on four backgrounds at 2400 × 1600. In the stored macOS 27 run, Regular fails the 95-point glass-crop threshold on three backgrounds:
 
-### Known failure
+| Background | Score |
+| --- | ---: |
+| Harbour | 94.93 |
+| Dark city | 93.80 |
+| Prism | 94.81 |
 
-`tools/full-visual.sh` **reports a failure on Regular out of the box**:
+The score is `100 × (1 − mean absolute RGB error / 255)`. It is not the percentage of matching pixels and does not establish visual fidelity. The thresholds remain unchanged.
 
-```
-harbour/regular     glass 94.93% < 95.00%
-city-night/regular  glass 93.80% < 95.00%
-prism/regular       glass 94.81% < 95.00%
-```
+See the [side comparison](captures/side-projection-matrix.png) and [metrics](captures/side-projection-metrics.json).
 
-The optics were calibrated against macOS 26. macOS 27 moved the Regular
-material slightly; the other four are unaffected and still clear the gate. The
-gate has deliberately **not** been lowered to make the run green — a gate that
-moves whenever it fails measures nothing. Re-tuning Regular against the current
-system is the open work.
+## Run checks
 
-Because the run stops there, regenerating the volumetric evidence below needs
-its two steps invoked directly:
-
-```sh
-validation/tools/capture-volume-matrix.sh
-validation/tools/compose-volume-evidence.py
-```
-
-## 2. The volumes, against themselves
-
-A ray-marched orb has no native counterpart, so it is gated on **coverage**
-instead of similarity: each material must change a measurable share of the
-pixels inside the object, and Identity must change none at all.
-
-| Metric | Measured | Gate |
-|--------|----------|------|
-| Active materials, changed pixels | 8.29 – 22.43 % | ≥ 5 % |
-| Identity, changed pixels | 0.00 % | ≤ 1 % |
-
-Four objects — panel, orb, torus, cluster — × five materials, plus the four
-camera presets as a separate pair-wise check that each view actually differs.
-
-Evidence: [`captures/volume-material-matrix.png`](captures/volume-material-matrix.png),
-[`captures/view-projections.png`](captures/view-projections.png),
-`captures/volume-metrics.json`.
-
-## Running it
-
-Fast — instantiates the production `VolumetricGlassLayer` and checks the
-canonical panel-side dispatch, configurable content bounds, Identity capture and
-input shutdown, and the active/idle processing lifecycle. No GUI:
+From the repository root:
 
 ```sh
 validation/tools/check.sh
-```
-
-This deliberately exercises the same addon path the integration docs describe,
-so the two cannot drift.
-
-Full — builds the SwiftUI reference, then captures and compares everything:
-
-```sh
 validation/tools/full-visual.sh
 ```
 
-That needs macOS 26 or newer and a matching Xcode, plus permission for
-`screencapture` to record the screen. `tools/gd.sh` launches the dedicated
-reference scene explicitly, so the root project keeps opening the spatial
-gallery. Every capture is serialized and self-closing.
+The first checks scripts, shaders, assets, and addon behavior without a window. The second builds SwiftUI and captures the full comparison. Native captures require macOS 26 or later, a matching Xcode, and Screen Recording permission. Set `DEVELOPER_DIR` to choose Xcode.
 
-The reference build uses whatever `xcode-select -p` points at; override it with
-`DEVELOPER_DIR=...` if you keep several Xcodes.
+The full run stops at the known flat-panel failure. To capture the volumes separately:
 
-## Layout
+```sh
+validation/tools/capture-volume-matrix.sh
+python3 validation/tools/compose-volume-evidence.py
+```
 
-| Path | What it is |
-|------|-----------|
-| `reference-swiftui/` | The SwiftUI application the side projection is compared against |
-| `godot/` | The canonical Godot reference scene |
-| `tools/` | Capture, comparison and evidence-composition scripts |
-| `captures/` | Checked-in evidence; `captures/raw/` is generated and ignored |
+## README image
+
+With Pillow 10.1 or later installed:
+
+```sh
+python3 validation/tools/compose-showcase.py
+```
+
+Run `capture-volume-matrix.sh` first if `captures/raw/volume/` is missing. The showcase uses Clear Panel, Clear Orb, Regular Tinted Torus, and Regular Cluster. It resizes each complete frame and adds labels; it does not alter the glass. Raw captures are generated files and are not checked in.
