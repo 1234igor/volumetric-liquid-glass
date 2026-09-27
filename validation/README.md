@@ -6,7 +6,7 @@ The volume shapes and the flat panel have separate checks. Only the flat panel h
 
 The matrix covers four objects and five materials. Active materials must change at least 5% of the frame's pixels. Identity may change at most 1%; the stored run changes none. A separate check confirms that the four camera presets produce different images.
 
-See [materials](captures/volume-material-matrix.png), [views](captures/view-projections.png), and [metrics](captures/volume-metrics.json). These checks detect missing output; they do not measure resemblance to Apple glass.
+See [materials](captures/volume-material-matrix.png), [views](captures/view-projections.png), and [metrics](captures/volume-metrics.json). The metrics record the changed-pixel fraction for each shape and material.
 
 ## Flat panel
 
@@ -18,13 +18,13 @@ Panel with the Side camera is compared with SwiftUI on four backgrounds at 2400 
 | Dark city | 93.80 |
 | Prism | 94.81 |
 
-The score is `100 × (1 − mean absolute RGB error / 255)`. It is not the percentage of matching pixels and does not establish visual fidelity. The thresholds remain unchanged.
+The score is `100 × (1 − mean absolute RGB error / 255)`. It measures mean channel error on a 0–100 scale.
 
 See the [side comparison](captures/side-projection-matrix.png) and [metrics](captures/side-projection-metrics.json).
 
 ## Run checks
 
-From the repository root:
+Requires Godot 4.7, Python 3, and Pillow 10.1 or later. Run from the repository root:
 
 ```sh
 validation/tools/check.sh
